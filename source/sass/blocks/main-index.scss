@@ -1,0 +1,15 @@
+.main-index__slider-section  {
+  position: relative;
+  // width: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media #{$tablet-only} {
+    width: 768px;
+  }
+
+  @media #{$desktop-only} {
+    width: 1440px;
+  }
+}
+

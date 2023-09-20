@@ -1,0 +1,27 @@
+.page {
+	height: 100%;
+	font-family: var(--main-font);
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.page__body {
+	margin: 0;
+	min-height: 100%;
+}
+
+.page__centerer {
+  margin: auto;
+
+  @media #{$mobile-only} {
+    width: 320px;
+  }
+
+  @media #{$tablet-only} {
+    width: 768px;
+  }
+
+  @media #{$desktop-only} {
+    width: 1440px;
+  }
+}
