@@ -18,8 +18,8 @@ navToggle.addEventListener('click', function () {
 });
 
 const slider = document.querySelector('.slider');
-const prevButton = document.querySelector('.prev-button');
-const nextButton = document.querySelector('.next-button');
+const prevButton = document.querySelector('.main-index__slider-container-button--prev-button');
+const nextButton = document.querySelector('.main-index__slider-container-button--next-button');
 const slides = Array.from(slider.querySelectorAll('.slider__slide'));
 const slideCount = slides.length;
 let slideIndex = 0;

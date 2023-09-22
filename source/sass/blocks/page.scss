@@ -11,7 +11,7 @@
 }
 
 .page__centerer {
-  margin: auto;
+  margin: 0 auto;
 
   @media #{$mobile-only} {
     width: 320px;
@@ -23,5 +23,21 @@
 
   @media #{$desktop-only} {
     width: 1440px;
+  }
+}
+
+.page__container {
+  margin: 0 auto;
+
+  @media #{$mobile-only} {
+    width: 280px;
+  }
+
+  @media #{$tablet-only} {
+    width: 728px;
+  }
+
+  @media #{$desktop-only} {
+    width: 1360px;
   }
 }

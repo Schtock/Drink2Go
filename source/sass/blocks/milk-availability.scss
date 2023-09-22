@@ -1,0 +1,67 @@
+.milk-availability {
+  padding: 0;
+  border: none;
+}
+
+.milk-availability__filter-list {
+  display: grid;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.milk-availability__label {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.milk-availability__input {
+	--radio-size: 24px;
+	--checked-size: 16px;
+	appearance: none;
+	display: grid;
+	margin: 0;
+
+	// &:hover {
+	// 	--border-color: #bababa;
+	// }
+
+	&:disabled {
+		--border-color: #E2E2E2;
+    color: #E2E2E2;
+
+		+ .milk-availability__label-name {
+			color: #E2E2E2;
+		}
+	}
+
+	&::before {
+		content: "";
+		box-sizing: border-box;
+		width: var(--radio-size);
+		height: var(--radio-size);
+		border: 2px solid ;
+		border-color: var(--border-color, #BDBDBD);
+		background: #ffffff;
+		border-radius: 50%;
+		grid-area: 1 / 1 / 2 / 2;
+	}
+
+	&:checked {
+    --border-color: #7859CF;
+
+    &::after {
+      content: "";
+      width: var(--checked-size);
+      height: var(--checked-size);
+      background-color: #7859CF;
+      border-radius: 50%;
+      grid-area: 1 / 1 / 2 / 2;
+      align-self: center;
+      justify-self: center;
+    }
+  }
+}

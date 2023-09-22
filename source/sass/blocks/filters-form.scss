@@ -1,0 +1,24 @@
+.filters-form {
+  display: grid;
+  gap: 30px;
+}
+
+.filters-form__price {
+  margin: 0;
+}
+
+.filters-form__milk-availability {
+  margin: 0;
+}
+
+.filters-form__origin-country {
+  margin: 0;
+}
+
+.filters-form__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 0;
+  margin-bottom: 20px;
+}
