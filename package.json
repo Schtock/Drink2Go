@@ -56,5 +56,10 @@
   "type": "module",
   "volta": {
     "node": "16.20.2"
+  },
+  "dependencies": {
+    "prettier": "^3.0.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-scss": "^5.2.1"
   }
 }

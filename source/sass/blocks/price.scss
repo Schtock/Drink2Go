@@ -4,44 +4,63 @@
 }
 
 .price__title {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
-.price__range-slider {
-  position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 280px;
-    height: 2px;
-    background-color: #E2E2E2;
-  }
-}
-
-.price__range-bar {
-  position: absolute;
-  top: -1px;
-  height: 4px;
-  background-color: #9070EC;
-}
-
-.price__range-toggle {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background: #ffffff;
-  border: 2px solid #9070EC;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &--min {
-    top: -10px;
+.price__range-container {
+  .noUi-target {
+    background-color: #e2e2e2;
+    border: none;
+    box-shadow: none;
+    height: 4px;
   }
 
-  &--max {
+  .noUi-connect {
+    background-color: #9070ec;
+  }
+
+  .noUi-horizontal .noUi-handle {
+    width: 24px;
+    height: 24px;
+    background: #ffffff;
+    border: 2px solid #9070ec;
+    border-radius: 50%;
     top: -10px;
-    right: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      --button-content: "";
+      --range-background: #7859cf;
+    }
+
+    &:hover,
+    &:focus {
+      --range-opacity: 0.25;
+    }
+
+    &::before {
+      position: absolute;
+      content: var(--button-content);
+      width: 16px;
+      height: 16px;
+      top: 2px;
+      left: 2px;
+      border-radius: 50%;
+      background: var(--range-background);
+      opacity: var(--range-opacity, 0);
+    }
+
+    &::after {
+      display: none;
+    }
+
+    &.noUi-active {
+      --range-opacity: 1;
+      --button-content: "";
+      --range-background: #7859cf;
+    }
   }
 }
 
@@ -50,12 +69,20 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 36px;
+
+  @media #{$tablet-only} {
+    padding-top: 30px;
+  }
+
+  @media #{$desktop-only} {
+    padding-top: 34px;
+  }
 }
 
 .price__dash {
   position: relative;
-  &::before {
 
+  &::before {
     content: "";
     position: absolute;
     width: 8px;
@@ -68,13 +95,42 @@
 .price__range-input {
   box-sizing: border-box;
   width: 118px;
-  padding: 8px 10px;
+  padding: 6px 10px;
   text-align: center;
   border-radius: 4px;
-  border: 2px solid #9070EC;
-  background: #FFFFFF;
+  border: 2px solid #9070ec;
+  background: #ffffff;
   font-family: var(--main-font);
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  appearance: textfield;
+
+  @media #{$tablet-only} {
+    width: 88px;
+  }
+
+  @media #{$desktop-only} {
+    width: 134px;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &:hover,
+  &:focus {
+    appearance: textfield;
+  }
+
+  &:hover {
+    border-color: #593cac;
+  }
+
+  &:disabled {
+    border-color: #e2e2e2;
+    background: #f8f8f8;
+  }
 }

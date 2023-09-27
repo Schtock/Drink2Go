@@ -14,33 +14,31 @@
 .origin-country__label {
   display: flex;
   gap: 10px;
-  font-size: 16px;
-  line-height: 24px;
 }
 
 .origin-country__input {
   --checkbox-width: 42px;
   --checkbox-height: 24px;
-  --tumbler-color: #BDBDBD;
+  --tumbler-color: #bdbdbd;
   position: relative;
   appearance: none;
   display: grid;
   margin: 0;
 
   &:hover {
-    --border-color: #bababa;
+    --border: 2px solid #9070ec;
   }
 
   &:disabled {
-    --tumbler-color: #E2E2E2;
+    --tumbler-color: #e2e2e2;
 
     +.origin-country__label-name {
-      color: #BDBDBD;
+      color: #bdbdbd;
     }
   }
 
   &:checked {
-    --tumbler-color: #7859CF;
+    --tumbler-color: #7859cf;
 
     &::after {
       transform: translateX(18px);
@@ -52,6 +50,7 @@
     box-sizing: border-box;
     width: var(--checkbox-width);
     height: var(--checkbox-height);
+    border: var(--border, none);
     border-radius: var(--checkbox-height);
     background-color: var(--tumbler-color);
     grid-area: 1 / 1 / 2 / 2;
@@ -68,6 +67,6 @@
     border-radius: 50%;
     background: #ffffff;
     grid-area: 1 / 1 / 2 / 2;
-    transition: .4s;
+    transition: 0.4s;
   }
 }

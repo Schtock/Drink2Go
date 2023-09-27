@@ -41,14 +41,18 @@
     height: auto;
   }
 
-  // &:hover {
-  // 	--icon-color: #68b738;
-  // }
+  &:hover,
+  &:focus,
+  &:active {
+    @media #{$desktop-only} {
+      --icon-color: #7859cf;
+      color: #7859cf;
+    }
+  }
 
-  // &:active {
-  // 	opacity: 0.3;
-  // 	--icon-color: #68b738;
-  // }
+  &:active {
+    background: #f0ebff;
+  }
 
   &--account {
     --navigation-icon: url("../../img/icons/stack.svg#account") no-repeat center;
