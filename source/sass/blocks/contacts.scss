@@ -27,15 +27,15 @@
 
 .contacts__icon {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 6px;
 
   &--address {
-    --icon: url("../../img/icons/stack.svg#adress-marker") no-repeat center;
+    --icon: url("../../images/icons/stack.svg#adress-marker") no-repeat center;
   }
 
   &--phone {
-    --icon: url("../../img/icons/stack.svg#phone-marker") no-repeat center;
+    --icon: url("../../images/icons/stack.svg#phone-marker") no-repeat center;
   }
 
   &::before {

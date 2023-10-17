@@ -24,20 +24,24 @@ function showSlide(index) {
   });
 }
 
-prevButton.addEventListener('click', () => {
+const onPrevButtonClick = () => {
   sliderSection.classList.remove(`main-index__slider-section--slider-${currentIndex}-bg`);
   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
   sliderSection.classList.add(`main-index__slider-section--slider-${currentIndex}-bg`);
   showSlide(currentIndex);
-});
+};
 
-nextButton.addEventListener('click', () => {
+const onNextButtonClick = () => {
   sliderSection.classList.remove(`main-index__slider-section--slider-${currentIndex}-bg`);
   currentIndex = (currentIndex + 1) % slides.length;
   sliderSection.classList.add(`main-index__slider-section--slider-${currentIndex}-bg`);
   showSlide(currentIndex);
-});
+};
 
-const showCurrentSlide = () => showSlide(currentIndex);
+const showCurrentSlide = () => {
+  prevButton.addEventListener('click', () => onPrevButtonClick());
+  nextButton.addEventListener('click', () => onNextButtonClick());
+  showSlide(currentIndex);
+};
 
 export { showCurrentSlide };

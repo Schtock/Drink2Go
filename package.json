@@ -3,35 +3,41 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.0.0",
-    "autoprefixer": "10.4.13",
-    "browser-sync": "2.27.10",
-    "del": "7.0.0",
+    "@htmlacademy/editorconfig-cli": "2.0.5",
+    "@linthtml/linthtml": "0.9.5",
+    "autoprefixer": "10.4.16",
+    "browser-sync": "2.29.3",
+    "del": "7.1.0",
+    "eslint": "8.51.0",
+    "eslint-config-htmlacademy": "10.0.1",
     "gulp": "4.0.2",
-    "gulp-html-bemlinter": "2.1.2",
-    "gulp-if": "3.0.0",
-    "gulp-libsquoosh": "1.1.2",
+    "gulp-html-bemlinter": "2.1.4",
     "gulp-plumber": "1.2.1",
     "gulp-postcss": "9.0.1",
     "gulp-sass": "5.1.0",
-    "gulp-stacksvg": "1.0.6",
+    "gulp-sharp-responsive": "0.4.1",
+    "gulp-stacksvg": "2.0.2",
     "gulp-svgmin": "4.1.0",
     "gulp-terser": "2.1.0",
-    "gulp-w3c-html-validator": "5.1.3",
-    "postcss": "8.4.19",
+    "linthtml-config-htmlacademy": "1.0.12",
+    "postcss": "8.4.30",
     "postcss-csso": "6.0.1",
-    "postcss-scss": "4.0.5",
+    "postcss-scss": "4.0.8",
     "postcss-url": "10.1.3",
-    "sass": "1.56.1",
-    "stylelint": "14.15.0",
-    "stylelint-config-htmlacademy": "1.1.2"
+    "sass": "1.68.0",
+    "stylelint": "15.10.3",
+    "stylelint-config-htmlacademy": "2.0.4",
+    "w3c-html-validator": "1.5.1"
   },
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --custom-syntax postcss-scss",
-    "w3c": "gulp validateMarkup --silent",
-    "bemlinter": "gulp lintBem --silent",
-    "lint": "npm run editorconfig && npm run stylelint && npm run w3c && npm run bemlinter",
+    "lint:spaces": "editorconfig-cli",
+    "lint:styles": "stylelint \"source/sass/**/*.scss\" --custom-syntax postcss-scss",
+    "lint:markup": "cd build && html-validator --quiet --continue",
+    "lint:html": "linthtml source/**/*.html --config .linthtmlrc",
+    "lint:bem": "gulp lintBem --silent",
+    "lint:js": "eslint source/js",
+    "prelint": "gulp processMarkup --silent",
+    "lint": "npm run lint:spaces && npm run lint:styles && npm run lint:markup && npm run lint:bem && npm run lint:html && npm run lint:js",
     "start": "gulp runDev",
     "build": "gulp buildProd",
     "preview": "gulp buildProd && gulp startServer"
@@ -42,24 +48,8 @@
     "not op_mini all",
     "not < 0.25%"
   ],
-  "editorconfig-cli": [
-    "*.json",
-    "*.js",
-    "source/*.html",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/sass/**/*.scss"
-  ],
   "engines": {
-    "node": ">=16.13.0"
+    "node": "^16.20.0 || ^18.16.0"
   },
-  "type": "module",
-  "volta": {
-    "node": "16.20.2"
-  },
-  "dependencies": {
-    "prettier": "^3.0.3",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-scss": "^5.2.1"
-  }
+  "type": "module"
 }

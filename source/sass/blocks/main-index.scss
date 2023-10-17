@@ -79,7 +79,7 @@
   }
 
   &--prev {
-    --arrow-icon: url("../../img/icons/stack.svg#slider-arrow-prev") no-repeat center;
+    --arrow-icon: url("../../images/icons/stack.svg#slider-arrow-prev") no-repeat center;
 
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -103,7 +103,7 @@
   }
 
   &--next {
-    --arrow-icon: url("../../img/icons/stack.svg#slider-arrow-next") no-repeat center;
+    --arrow-icon: url("../../images/icons/stack.svg#slider-arrow-next") no-repeat center;
     grid-column: 3 / 4;
     grid-row: 1 / 2;
 

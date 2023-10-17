@@ -27,18 +27,18 @@
   }
 
   &--vkontakte {
-    --socials-icon: url("../../img/icons/stack.svg#vk") no-repeat center;
+    --socials-icon: url("../../images/icons/stack.svg#vk") no-repeat center;
   }
 
   &--pinterest {
     padding: 9px;
-    --socials-icon: url("../../img/icons/stack.svg#pinterest") no-repeat center;
+    --socials-icon: url("../../images/icons/stack.svg#pinterest") no-repeat center;
     --social-width: 22px;
     --social-height: 22px;
   }
 
   &--ok {
-    --socials-icon: url("../../img/icons/stack.svg#ok") no-repeat center;
+    --socials-icon: url("../../images/icons/stack.svg#ok") no-repeat center;
   }
 
   &::before {
